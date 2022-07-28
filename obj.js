@@ -1,5 +1,6 @@
 var arr1=[
     {
+        img :'css/image/1658042314869.jpg',
         name :'arun',
         number :6379055616,
         batch :'FSD-10',
@@ -8,6 +9,7 @@ var arr1=[
         location :'chennai'
     },
     {
+        img:'css/image/IMG-20220607-WA0002.jpg',
         name :'kani',
         number :6379055616,
         batch :'FSD-10',
@@ -16,6 +18,7 @@ var arr1=[
         location :'chennai'
     },
     {
+        img :'css/image/IMG-20220613-WA0003.jpg',
         name :'sri',
         number :6379055616,
         batch :'FSD-10',
@@ -24,6 +27,7 @@ var arr1=[
         location :'chennai'
     },
     {
+        img :'css/image/Snapchat-82447130.jpg',
         name :'magi',
         number :6379055616,
         batch :'FSD-10',
@@ -32,6 +36,7 @@ var arr1=[
         location :'chennai'
     },
     {
+        img :'css/image/Snapchat-1492123380.jpg',
         name :'ravi',
         number :6379055616,
         batch :'FSD-10',
@@ -40,33 +45,23 @@ var arr1=[
         location :'chennai'
     }
 ]
-// var body = document.querySelector('.body');
-// var table = document.querySelector('.arun');
-// var th=document.createElement('th');
-// var td =document.createElement('td');
-// // var tablehed =[]
-// console.log(tablehed);
-//  table.append(th)
-//  th.innerHTML = tablehed;
-//  console.log(table);
-//  table.append(td)
-//  console.log(td);
-// // th.append(tablehed)
-// // body.appendChild(table)
+
 var table = document.createElement('table');
 var tr = document.createElement('tr');
-var array = ['photo','name','number','batch','git','referby','location'];
+var array = ['image','name','number','batch','git','referby','location'];
 
-for (var j = 0; j < array.length; j++) {
-  var th = document.createElement('th'); //column
-  var text = document.createTextNode(array[j]); //cell
+for (var i = 0; i < array.length; i++) {
+  var th = document.createElement('th'); 
+  var text = document.createTextNode(array[i]); 
   th.appendChild(text);
   tr.appendChild(th);
 }
 table.appendChild(tr);
-// table.setAttribute('array')
-for (var i = 0; i < array.length; i++) {
+console.log(table)
+
+    arr1.forEach((arun)=>{
   var tr = document.createElement('tr');
+
 
 
   var td1 = document.createElement('td');
@@ -77,13 +72,17 @@ for (var i = 0; i < array.length; i++) {
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
 
-  var text1 = document.createTextNode('photo');
-  var text2 = document.createTextNode('name');
-  var text3 = document.createTextNode('number');
-  var text4 = document.createTextNode('batch');
-  var text5 = document.createTextNode('git');
-  var text6 = document.createTextNode('referby');
-  var text7 = document.createTextNode('location');
+  var text1 = document.createElement('img');
+  text1.src=arun.img;
+  td1.appendChild(text1);
+
+  text1.setAttribute('class','image' );
+  var text2 = document.createTextNode(arun.name);
+  var text3 = document.createTextNode(arun.number);
+  var text4 = document.createTextNode(arun.batch);
+  var text5 = document.createTextNode(arun.git);
+  var text6 = document.createTextNode(arun.referby);
+  var text7 = document.createTextNode(arun.location);
 
   td1.appendChild(text1);
   td2.appendChild(text2);
@@ -102,7 +101,8 @@ for (var i = 0; i < array.length; i++) {
   tr.appendChild(td7);
 
   table.appendChild(tr);
-}
+})
 document.body.appendChild(table);
-array.forEach(array)
+
+
 
